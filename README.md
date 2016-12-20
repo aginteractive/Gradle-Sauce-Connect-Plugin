@@ -36,10 +36,12 @@ Example on how to use the plugin:
 
 # TODO
 
-1. [DONE] Download archive artifact (must work on Darwin/Windows/Linux)
-2. [DONE] Un-archive archive artifact (must work on Darwin/Windows/Linux)
-3. [DONE] Rename un-archived artifact for easy access
-4. [DONE] Open SauceConnect tunnel at background (must work on Darwin/Windows/Linux)
-5. [DONE] Shutdown SauceConnect if it is running (must work on Darwin/Windows/Linux)
-6. [] Inject SauceConnect options: do it as a string
-7. [] Version handling for SauceConnect
+- [ ] #1 - Inject SauceConnect options: do it as a string
+- [ ] #2 - Version handling for SauceConnect
+- [ ] #3 - Check if SauceConnect was previously downloaded
+- [x] Download archive artifact (must work on Darwin/Windows/Linux)
+- [x] Un-archive archive artifact (must work on Darwin/Windows/Linux)
+- [x] Rename un-archived artifact for easy access
+- [x] Open SauceConnect tunnel at background (must work on Darwin/Windows/Linux)
+- [x] Shutdown SauceConnect if it is running (must work on Darwin/Windows/Linux)
+
