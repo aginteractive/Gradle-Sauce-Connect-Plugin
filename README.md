@@ -36,9 +36,9 @@ Example on how to use the plugin:
 
 # TODO
 
-- [ ] #1 - Inject SauceConnect options: do it as a string
-- [ ] #2 - Version handling for SauceConnect
-- [ ] #3 - Check if SauceConnect was previously downloaded
+- [ ] [#1](https://github.com/aginteractive/Gradle-Sauce-Connect-Plugin/issues/1) - Inject SauceConnect options: do it as a string
+- [ ] [#2](https://github.com/aginteractive/Gradle-Sauce-Connect-Plugin/issues/2) - Version handling for SauceConnect
+- [ ] [#3](https://github.com/aginteractive/Gradle-Sauce-Connect-Plugin/issues/3) - Check if SauceConnect was previously downloaded
 - [x] Download archive artifact (must work on Darwin/Windows/Linux)
 - [x] Un-archive archive artifact (must work on Darwin/Windows/Linux)
 - [x] Rename un-archived artifact for easy access
