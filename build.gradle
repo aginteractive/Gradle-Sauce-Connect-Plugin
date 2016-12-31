@@ -1,3 +1,15 @@
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "com.gradle.publish:plugin-publish-plugin:0.9.7"
+  }
+}
+
+apply plugin: "com.gradle.plugin-publish"
 apply plugin: "groovy"
 
 repositories {
@@ -7,4 +19,35 @@ repositories {
 dependencies {
     compile gradleApi()
     compile localGroovy()
+}
+
+version = "0.0.8"
+group = "SauceConnectPlugin"
+
+pluginBundle {
+  website = "https://github.com/aginteractive/Gradle-Sauce-Connect-Plugin"
+  vcsUrl = "https://github.com/aginteractive/Gradle-Sauce-Connect-Plugin.git"
+  description = "Test release of SauceConnectPlugin"
+  tags = ['SauceLabs', 'SauceConnect']
+
+  plugins {
+    SauceConnectPlugin {
+      id = "io.johnroach.SauceConnectPlugin"
+      displayName = "Sauce Connect Plugin"
+    }
+  }
+}
+
+apply plugin: "io.johnroach.SauceConnectPlugin"
+sauceAuth {
+username="$System.env.SAUCE_USERNAME"
+key="$System.env.SAUCE_ACCESS_KEY"
+}
+
+task "sauceTest"(type: Test) {
+dependsOn startSauceConnect
+
+doLast {
+stopSauceConnect
+}
 }
