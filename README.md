@@ -23,3 +23,9 @@ For now the following will publish the plugins:
 - [x] Rename un-archived artifact for easy access
 - [x] Open SauceConnect tunnel at background (must work on Darwin/Windows/Linux)
 - [x] Shutdown SauceConnect if it is running (must work on Darwin/Windows/Linux)
+
+
+## Contributing
+
+Contributions are welcome. Please see [CONTRIBUTING.md](CONTRIBUTING.md) for
+details.
