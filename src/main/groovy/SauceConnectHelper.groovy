@@ -1,4 +1,4 @@
-package io.johnroach
+package com.saucelabs
 
 import org.gradle.internal.os.OperatingSystem
 import org.gradle.nativeplatform.platform.Architecture

@@ -21,18 +21,18 @@ dependencies {
     compile localGroovy()
 }
 
-version = "0.0.9"
+version = "0.0.12"
 group = "SauceConnectPlugin"
 
 pluginBundle {
   website = "https://github.com/aginteractive/Gradle-Sauce-Connect-Plugin"
   vcsUrl = "https://github.com/aginteractive/Gradle-Sauce-Connect-Plugin.git"
-  description = "Test release of SauceConnectPlugin"
+  description = "Official release of SauceConnectPlugin"
   tags = ['SauceLabs', 'SauceConnect']
 
   plugins {
     SauceConnectPlugin {
-      id = "io.johnroach.SauceConnectPlugin"
+      id = "com.saucelabs.SauceConnectPlugin"
       displayName = "Sauce Connect Plugin"
     }
   }

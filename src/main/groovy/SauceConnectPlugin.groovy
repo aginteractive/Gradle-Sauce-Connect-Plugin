@@ -1,4 +1,4 @@
-package io.johnroach
+package com.saucelabs
 
 import org.gradle.api.GradleException
 import org.gradle.api.Plugin
