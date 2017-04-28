@@ -1,4 +1,4 @@
-package io.johnroach
+package com.saucelabs
 
 import java.io.File
 import org.gradle.api.DefaultTask

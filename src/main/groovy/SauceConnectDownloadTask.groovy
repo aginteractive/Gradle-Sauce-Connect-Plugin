@@ -1,4 +1,4 @@
-package io.johnroach
+package com.saucelabs
 
 import groovy.json.JsonSlurper
 import java.io.File

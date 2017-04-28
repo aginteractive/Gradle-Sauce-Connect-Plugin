@@ -1,4 +1,4 @@
-package io.johnroach
+package com.saucelabs
 
 class SauceConnectAuthPluginExtension {
     def String username = "$System.env.SAUCE_USERNAME"
