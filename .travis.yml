@@ -3,6 +3,9 @@ jdk:
 - oraclejdk8
 before_install:
 - export | grep SAUCE_
+branches:
+  only:
+  - master
 script: "./gradlew -q -Pversion=$TRAVIS_JOB_NUMBER build publishPlugins"
 env:
   global:
