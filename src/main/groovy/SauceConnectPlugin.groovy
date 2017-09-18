@@ -5,6 +5,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.DefaultTask
 
+
 class SauceConnectPlugin implements Plugin<Project> {
     def String setusername
     def String setkey
@@ -12,17 +13,17 @@ class SauceConnectPlugin implements Plugin<Project> {
     void apply(Project project) {
         project.ext.set("artifactName", "")
 
-        project.extensions.create("sauceAuth", SauceConnectAuthPluginExtension)
+        project.extensions.create("sauceconnect", SauceConnectExtension)
 
         project.task("getSauceAuth") {
             description "Makes sure that required Saucelabs Authentication requirements are met"
             doLast{
-              if (project.sauceAuth.username && project.sauceAuth.key){
+              if (project.sauceconnect.username && project.sauceconnect.key){
                   println "Collected SauceLabs authentication requirements..."
               } else {
                   def authError = "Failed to acquire SauceLabs username and key.\n" +
                                   "Please either set environment variables SAUCE_USERNAME and SAUCE_ACCESS_KEY \n" +
-                                  "or set sauceAuth.username and sauceAuth.key\n"
+                                  "or set sauceconnect.username and sauceconnect.key\n"
                   throw new GradleException(authError)
               }
             }
