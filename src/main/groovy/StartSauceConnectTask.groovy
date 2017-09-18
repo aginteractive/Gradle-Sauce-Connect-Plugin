@@ -5,6 +5,7 @@ import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
 import org.gradle.api.tasks.Input
 
+
 class StartSauceConnectTask extends DefaultTask implements SauceConnectHelper {
     String command
     String ready = "Sauce Connect is up, you may start your tests."
@@ -12,19 +13,21 @@ class StartSauceConnectTask extends DefaultTask implements SauceConnectHelper {
 
     String username
     String key
+    String options
 
     def getSauceCommand() {
         if(getOSType() == "win32") {
-            return "sc.exe " + "/u " + username + " /k " + key + " /d " + directory + "\\sc\\bin\\sc.pid"
+            return "sc.exe " + "/u " + username + " /k " + key + " /d " + directory + "\\sc\\bin\\sc.pid " + options
         } else {
-            return "./sc " + "-u " + username + " -k " + key + " --pidfile " + directory + "/sc/bin/sc.pid"
+            return "./sc " + "-u " + username + " -k " + key + " --pidfile=" + directory + "/sc/bin/sc.pid " + options
         }
     }
 
     @TaskAction
     def spawnSauceConnectProcess() {
-        username = project.sauceAuth.username
-        key = project.sauceAuth.key
+        username = project.sauceconnect.username
+        key = project.sauceconnect.key
+        options = project.sauceconnect.options
         ProcessBuilder builder = new ProcessBuilder(getSauceCommand().split(' '))
         builder.redirectErrorStream(true)
 
