@@ -21,7 +21,7 @@ dependencies {
     compile localGroovy()
 }
 
-version = "0.0.13"
+version = "0.0.14"
 group = "SauceConnectPlugin"
 
 pluginBundle {
