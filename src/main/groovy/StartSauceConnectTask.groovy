@@ -17,7 +17,7 @@ class StartSauceConnectTask extends DefaultTask implements SauceConnectHelper {
 
     def getSauceCommand() {
         if(getOSType() == "win32") {
-            return directory + "\\sc\\bin\\sc.exe " + "/u " + username + " /k " + key + " /d " + directory + "\\sc\\bin\\sc.pid " + options
+            return directory + "\\sc\\bin\\sc.exe " + "-u " + username + " -k " + key + " -d " + directory + "\\sc\\bin\\sc.pid " + options
         } else {
             return "./sc " + "-u " + username + " -k " + key + " --pidfile=" + directory + "/sc/bin/sc.pid " + options
         }
