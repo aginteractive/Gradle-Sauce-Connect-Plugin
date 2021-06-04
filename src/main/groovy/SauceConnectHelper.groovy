@@ -2,8 +2,10 @@ package com.saucelabs
 
 import org.gradle.internal.os.OperatingSystem
 import org.gradle.nativeplatform.platform.Architecture
+import org.gradle.api.tasks.Internal
 
 trait SauceConnectHelper {
+    @Internal
     String getOSType() {
         String osType
         String arch = System.getProperty("os.arch")
