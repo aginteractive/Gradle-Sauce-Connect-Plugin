@@ -2,19 +2,26 @@ package com.saucelabs
 
 import java.io.File
 import org.gradle.api.DefaultTask
+import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.TaskAction
 import org.gradle.api.tasks.Input
 
 
 class StartSauceConnectTask extends DefaultTask implements SauceConnectHelper {
+    @Internal
     String command
+    @Internal
     String ready = "Sauce Connect is up, you may start your tests."
+    @Internal
     String directory = "$project.buildDir"
-
+    @Internal
     String username
+    @Internal
     String key
+    @Internal
     String options
 
+    @Internal
     def getSauceCommand() {
         if(getOSType() == "win32") {
             return directory + "\\sc\\bin\\sc.exe " + "/u " + username + " /k " + key + " /d " + directory + "\\sc\\bin\\sc.pid " + options
